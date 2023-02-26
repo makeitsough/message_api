@@ -1,0 +1,38 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Webpage</title>
+    <style>
+      button {
+        display: inline-block;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="navigation">
+      {% for item in navigation %}
+      <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <h1>{% block title %} Add a New Message {% endblock %}</h1>
+    <form action="/message/" method="POST">
+      <label for="content">Message Content</label>
+      <br />
+      <textarea
+        name="content"
+        placeholder="Message content"
+        rows="15"
+        cols="60"
+      >
+Send another message?</textarea
+      >
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <button type="retrieve">Render recent messages?</button>
+  </body>
+</html>
