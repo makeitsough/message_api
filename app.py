@@ -33,7 +33,7 @@ def log_request():
     cur.close()
     conn.close()
 
-    return render_template('send.html')
+    return render_template('sent.html')
 
 
 @app.route('/message/', methods=['GET', 'POST'])
